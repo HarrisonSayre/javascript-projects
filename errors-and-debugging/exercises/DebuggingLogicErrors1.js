@@ -3,6 +3,8 @@
 // Did it?
 // Do not worry about fixing the code yet, we will do that in the next series of exercises.
 
+//It should not, but it did. Because once the else appens it goes to the next if else, and the false launchReady is canged to true via line 23. 
+
 let launchReady = false;
 let fuelLevel = 17000;
 let crewStatus = true;

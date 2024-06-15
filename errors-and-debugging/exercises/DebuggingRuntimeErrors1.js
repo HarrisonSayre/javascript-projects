@@ -4,7 +4,8 @@
 let launchReady = false;
 let fuelLevel = 17000;
 
-if (fuellevel >= 20000) {
+//Error is not using camel case so variable isn't correct.
+if (fuelLevel >= 20000) {
    console.log('Fuel level cleared.');
    launchReady = true;
 } else {
