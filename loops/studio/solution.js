@@ -51,8 +51,8 @@ function runProgram() {
   /// We've started with the number 2 for now. Does your solution still work if you change this value? ///
   
                                                                         //2
-  //let meals = mealAssembly(protein, grains, veggies, beverages, desserts, 2);
-  //console.log(meals)
+  let meals = mealAssembly(protein, grains, veggies, beverages, desserts, 2);
+  console.log(meals)
   
 
   /// TEST PART B HERE ///
