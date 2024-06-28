@@ -3,11 +3,22 @@
 // Part One: Reverse Characters
 
 // 1. Define the function as reverseCharacters. Give it one parameter, which will be the string to reverse.
+
+function reverseCharacters(reversedString){
+    if(typeof(reversedString) === "string"){
+        return reversedString.split("").reverse().join("");
+    }else if (typeof(reversedString) === "number"){
+        return Number(String(reversedString).split("").reverse().join(""));
+    }
+}
+
 // 2. Within the function, split the string into an array, then reverse the array.
 // 3. Use join to create the reversed string and return that string from the function.
 // 4. Below the function, define and initialize a variable to hold a string.
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
+
+console.log(reverseCharacters(12345));
 
 // Part Two: Reverse Digits
 
@@ -26,9 +37,25 @@
 // 5. Return the final, reversed array.
 // 6. Be sure to print the results from each test case in order to verify your code.
 
+function reverseArray(baseArray){
+    let newArray = [];
+    for(let i = 0; i < baseArray.length; i++){
+        //newArray.push(reverseCharacters(baseArray[i]));
+        newArray.unshift(reverseCharacters(baseArray[i]));
+
+    }
+    return newArray
+    //return newArray.reverse();
+}
+
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
+
+console.log(reverseArray(arrayTest1));
+console.log(reverseArray(arrayTest2));
+console.log(reverseArray(arrayTest3));
+
 
 // Bonus Missions
 
@@ -36,11 +63,21 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 // 2. Retrieve only the last character from strings with lengths of 3 or less.
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
+function funPhrase(phrase){
+    if(phrase.length <= 3){
+        return `We put the ${phrase[phrase.length-1]} in ${phrase}!`; 
+    }
+    else{
+        return `We put the ${phrase.slice(0,3)} in ${phrase}!`; 
+    }
+}
 
 // Test Function
 
 // 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
 // 2. Call your function and print the returned phrase.
+let phrase = "Dog";
+console.log(funPhrase(phrase));
 
 // Area of rectangle equal to length x width
 
@@ -49,3 +86,12 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
+
+function calculateRectangleArea(length, width=length){
+    return length*width;
+}
+
+let length = 5;
+let width = 4;
+
+console.log(`The area is ${calculateRectangleArea(length, width)} cm^2.”`);
