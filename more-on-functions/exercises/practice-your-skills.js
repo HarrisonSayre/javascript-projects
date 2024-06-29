@@ -6,6 +6,18 @@ b) If passed a string, return the string “ARRR!”
 c) Be sure to test your function before moving on the next part. 
 */
 
+let ship = function(numOrStringVal){
+    if(typeof(numOrStringVal) === "number"){
+        return numOrStringVal * 3;
+    }
+    else if(typeof(numOrStringVal) === "string"){
+        return "ARRR!";
+    }
+    else{
+        return numOrStringVal;
+    }
+}; 
+
 /* Add to your code! Use your fuction and the map method to change an array  as follows:
 a) Triple any the numbers.
 b) Replace any strings with “ARRR!”
@@ -13,3 +25,8 @@ c) Print the new array to confirm your work.
 */
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+
+let arr2 = arr.map(ship);
+
+console.log(ship("String"));
+console.log(arr2);

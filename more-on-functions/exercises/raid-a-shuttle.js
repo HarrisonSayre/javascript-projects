@@ -29,16 +29,37 @@ console.log("Hold status: " + holdStatus(cargoHold));
  
 //a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
 
+shuttleFuelLevelCheck = function(fuelLevel) {
+  if(fuelLevel > 100000){
+    return fuelLevel -100001;
+  }else if(fuelLevel > 50000){
+    return fuelLevel - 50001;
+  }else{
+    return fuelLevel;
+  }
+};
+
 //b). You must siphon off fuel without alerting the TAs. Inside your function, you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
 
 //c). Once you figure out how much fuel to pump out, return that value.
 
 //d). Decide where to best place your function call to gather our new fuel.
 
+//console.log(checkFuel(shuttleFuelLevelCheck(fuelLevel)));
+
 /* Next, liberate some of that glorious cargo.
  */
 
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
+
+cargoInventory = function(cargo){
+  let loot = [];
+  loot.push(cargo[cargo.indexOf("gold")]);
+  cargo[cargo.indexOf("gold")] = "fool's gold";
+  loot.push(cargo[cargo.indexOf("AE-35 unit")]);
+  cargo[cargo.indexOf("AE-35 unit")] = "R5 unit";
+  return loot;
+};
 
 //b). You need to swipe two items from the cargo hold. Choose well. Stealing water ain’t gonna get us rich. Put the swag into a new array and return it from the function.
 
@@ -51,6 +72,16 @@ console.log("Hold status: " + holdStatus(cargoHold));
  
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
 	
+let irs = function(fuelLevelContents, cargoHoldContents) {
+  let loot = cargoInventory(cargoHoldContents)
+
+  console.log(`"Raided ${shuttleFuelLevelCheck(fuelLevelContents)} kg of fuel from the tanks, and stole ${loot[0]} and ${loot[1]} from the cargo hold."`)
+};
+
+irs(fuelLevel, cargoHold);
+
+//console.log(cargoInventory(cargoHold));
+
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
