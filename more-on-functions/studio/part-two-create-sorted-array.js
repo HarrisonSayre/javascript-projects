@@ -20,10 +20,45 @@ function findMinValue(arr){
 
 //Your function here...
 
+function lowToHighSort (arr){
+  min = 0;
+  let sortedArray = [];
+  while(arr.length > 0){
+    min = findMinValue(arr);
+    sortedArray.push(min);
+    arr.splice(arr.indexOf(min), 1);
+  }
+  return sortedArray;
+}
+
 /* BONUS MISSION: Refactor your sorting function to use recursion below:
  */
+
+function recursionLowToHighSort (arr, sortedArray = []){
+  //if(arr.length <= 1){
+    //return sortedArray.push(findMinValue(arr));
+  if(arr.length === 0 ){
+    return sortedArray;
+  }else{
+    let min = findMinValue(arr);
+    sortedArray.push(min);
+    arr.splice(arr.indexOf(min),1);
+    return(recursionLowToHighSort(arr, sortedArray));
+  }
+//  return sortedArray;
+}
 
 //Sample arrays for testing:
 let nums1 = [5, 10, 2, 42];
 let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
 let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+
+console.log(lowToHighSort(nums1));
+console.log(lowToHighSort(nums2));
+console.log(lowToHighSort(nums3));
+console.log(recursionLowToHighSort(nums1));
+console.log(recursionLowToHighSort(nums2));
+console.log(recursionLowToHighSort(nums3));
+
+
+
