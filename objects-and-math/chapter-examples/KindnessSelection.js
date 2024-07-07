@@ -7,9 +7,26 @@ function randomSelection(arr){
  
  let words = ['Hello', 'World', 'Python', 'JavaScript', 'Rutabaga'];
  
- for (i=0; i < 8; i++){
+ for (i=0; i < 3; i++){
    console.log(randomSelection(happiness));
+   console.log(randomSelection(words));
  }
+
+if((Math.round(Math.random()) == 0)){
+  for (i=0; i < 2; i++){
+    console.log(randomSelection(happiness));
+  }
+}else{
+    for (i=0; i < 2; i++){
+      console.log(randomSelection(words));
+    }
+  }
+
+let newArray = []
+newArray.push((randomSelection(happiness)));
+newArray.push((randomSelection(words)));
+console.log(newArray);
+
  
  //Experiment with the code above. Try to:
  //a) Print 3 random selections from each array.
