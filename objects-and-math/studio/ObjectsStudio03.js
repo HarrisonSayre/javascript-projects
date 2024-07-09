@@ -1,5 +1,11 @@
 // Code your crewMass function here:
-
+function crewMass (crewMembers){
+  //9.5
+  for(let i = 0; i < crewMembers.length; i++){
+    
+  }
+  return;
+}
 
 // Code your fuelRequired function here:
 
