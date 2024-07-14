@@ -1,4 +1,5 @@
 const checkFive = require('../checkFive.js');
+//const test = require('../checkFive.js');
 
 describe("checkFive", function(){
     test("Returns 'number is less than 5.' when passed a number < 5", function(){
